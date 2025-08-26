@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Meu portfólio</title>
@@ -11,7 +11,13 @@
 
   <header>
     <nav class="navbar">
-      <ul class="nav-links">
+  <button class="hamburger" id="hamburger-btn" aria-label="Abrir-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#projects">Projetos</a></li>
@@ -29,17 +35,18 @@
    </section> 
 
        <section id="about" class="about">
-            <h2 class="fade-in-element">Sobre mim</h2>
-      <p class="fade-in-element">
-        Sou um estudante de programação e desenvolvedor iniciante.
-        Tenho experiência com HTML, CSS, JavaScrip e estou aprendendo Python para elevar minhas habilidades.
-        Busco sempre evoluir e criar projetos que possam ajudar pessoas e empresas a crescerem no mundo digital.
-      </p>
-      <p class="fade-in-element">
-        Estou aberto a oportunidades de estágio e projetos freelance.
-        Vamos trabalhar juntos para transformar suas ideias em realidade!
-      </p>
+  <div class="about-content fade-in-element"> 
+    <h2 class="fade-in-element">Sobre mim</h2>
+    <p class="fade-in-element">
+      Sou um estudante de programação e desenvolvedor iniciante.
+      Tenho experiência com HTML, CSS, JavaScrip e estou aprendendo Python para elevar minhas habilidades.
+      Busco sempre evoluir e criar projetos que possam ajudar pessoas e empresas a crescerem no mundo digital. 
+      <br>Estou aberto a oportunidades de estágio e projetos freelance.
+      Vamos trabalhar juntos para transformar suas ideias em realidade! 
+    </p>
+  </div>
       </section>  
+
 
          <section id="projects" class="projects">
             <h2 class="fade-in-element">Meus projetos</h2>
@@ -55,8 +62,8 @@
           <i class="fa-brands fa-js" title="JavaScript"></i>
         </div>
         <div class="buttons">
-          <a href="https://techstoreofc.flashclean.com.br/#" class="btn">Ver projeto</a>
-          <a href="https://github.com/gustavoLim4/Tech-Store.git" class="btn">GitHub</a>
+          <a href="https://techstoreofc.flashclean.com.br/#" class="btn btn-primary">Ver projeto</a>
+          <a href="https://github.com/gustavoLim4/Tech-Store.git" class="btn btn-secondary">GitHub</a>
         </div>
       </div>
 

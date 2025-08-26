@@ -1,28 +1,44 @@
-document.addEventListener ('DOMContentLoaded', function() {
+// js.js
 
-  // Copiar o botão de email
+document.addEventListener('DOMContentLoaded', () => {
+  // Apenas chamo a função principal aqui. 
+  setupCopyToClipboard();
+  setupScrollAnimations();
+  setupMobileMenu();
+});
+
+
+ // Configura a funcionalidade de copiar o e-mail para a área de transferência.
+ 
+function setupCopyToClipboard() {
   const copyButton = document.getElementById('copy-button');
+  
+  if (!copyButton) return;
+
   const copyFeedback = document.getElementById('copy-feedback');
 
-  copyButton.addEventListener('click', function() {
+  copyButton.addEventListener('click', () => {
     const emailText = document.getElementById('email-text').innerText;
 
-    navigator.clipboard.writeText(emailText).then(function() {
+    navigator.clipboard.writeText(emailText).then(() => {
       copyFeedback.classList.remove('feedback-hidden');
-
       setTimeout(() => {
         copyFeedback.classList.add('feedback-hidden');
       }, 2000);
-    
-    }).catch(function(error) {
+    }).catch(error => {
       console.error('Falha ao copiar o e-mail: ', error);
-      alert('Não foi possivel copiar o e-mail.');
     });
   });
+}
 
-  // Animação FadeIn
+
+ // Configura as animações de fade-in ao rolar a página.
+ 
+function setupScrollAnimations() {
   const elementsToAnimate = document.querySelectorAll('.fade-in-element');
   
+  if (elementsToAnimate.length === 0) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -34,7 +50,19 @@ document.addEventListener ('DOMContentLoaded', function() {
     threshold: 0.1
   });
 
-  elementsToAnimate.forEach(element => {
-    observer.observe(element);
-  });
-});
+  elementsToAnimate.forEach(element => observer.observe(element));
+}
+
+// Configura a funcionalidade do menu hamburger para telas menores 
+
+function setupMobileMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (!hamburgerBtn || !navLinks) return; 
+
+  hamburgerBtn.addEventListener('click', () => {
+     navLinks.classList.toggle('is-active');
+     hamburgerBtn.classList.toggle('is-active');
+  }); 
+}

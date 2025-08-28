@@ -26,8 +26,15 @@ body {
   line-height: 1.6;
   background: var(--background-primary);
   color: var(--text-primary);
-  padding-top: 70px;
+  padding-top: 4.3rem; /* 70px */
   overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1, h2, h3 {
@@ -37,7 +44,7 @@ h1, h2, h3 {
 
 /* Header */
 header {
-  background: var(--background-secundary);
+  background: transparent;
   padding: 1rem 2rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   position: fixed;
@@ -72,7 +79,7 @@ header {
 
 /* Hero section */
 .hero {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 4.375rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,8 +132,8 @@ section h2::after {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
+  width: 3.75rem;
+  height: 0.25rem;
   background-color: var(--accent-color);
   border-radius: 2px;
 }
@@ -138,26 +145,25 @@ section h2::after {
   align-items: center;
 }
 
-.about-container {
-  max-width: 800px;
+.about-content {
+  max-width: 50rem; /* 800px */
   text-align: left;
 }
 
 .about-content p {
   margin-bottom: 1.5rem;
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1.1rem;
+  text-align: left;
 }
 
 /* Project section */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
   gap: 1rem;
 }
 
 .project-card {
-  width: 130%;
   background: var(--background-secondary);
   border-radius: 12px;
   border: 1px solid var(--border-color);
@@ -378,7 +384,7 @@ footer {
     padding: 4rem 1rem;
   }
 
-  .button {
+  .buttons {
     flex-direction: column;
     gap: 0.5rem;
   }

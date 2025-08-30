@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCopyToClipboard();
   setupScrollAnimations();
   setupMobileMenu();
+  setupBackToTopButton();
+  setupActiveSectionIndicator();
 });
 
 
@@ -65,4 +67,60 @@ function setupMobileMenu() {
      navLinks.classList.toggle('is-active');
      hamburgerBtn.classList.toggle('is-active');
   }); 
+}
+
+// Funcionalidade do botao voltar para o topo 
+
+function setupBackToTopButton() {
+  const  backToTopBtn = document.getElementById('back-to-top-btn');
+
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+function setupActiveSectionIndicator() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  if (sections.length === 0 || navLinks.length === 0) return;
+
+  const observerOptions = {
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+
+        navLinks.forEach(link => {
+           link.classList.remove('active');
+        }); 
+
+        const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 }

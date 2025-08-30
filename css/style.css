@@ -77,6 +77,11 @@ header {
   color: var(--accent-color);
 }
 
+.nav-links a.active {
+  color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
 /* Hero section */
 .hero {
   min-height: calc(100vh - 4.375rem);
@@ -416,6 +421,40 @@ footer {
   margin: 5px auto;
   background: var(--text-primary);
   transition: all 0.3s ease-in-out;
+}
+
+/* botao de voltar a pagina */
+#back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+  z-index: 999;
+}
+
+#back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top-btn:hover{
+  background-color: var(--accent-color-hover);
+  box-shadow: 0 6px 20px rgba(154, 72, 214, 0.4);
 }
 
 /* Área do Responsivo */ 

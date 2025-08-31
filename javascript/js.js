@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupMobileMenu();
   setupBackToTopButton();
   setupActiveSectionIndicator();
+  setupThemeToggler();
 });
 
 
@@ -29,8 +30,19 @@ function setupCopyToClipboard() {
       }, 2000);
     }).catch(error => {
       console.error('Falha ao copiar o e-mail: ', error);
+      fallbackCopyText(copyFeedback);
     });
   });
+}
+
+function fallbackCopyText(feedbackElement) {
+  feedbackElement.innerText = "Eroo ao copiar. Segure para copiar manualmente";
+  feedbackElement.style.color = '#FFA500';
+  feedbackElement.classList.remove('feedback-hidden');
+
+  setTimeout(() => {
+    feedbackElement.classList.add('feedback-hidden');
+  }, 4000);
 }
 
 
@@ -60,13 +72,23 @@ function setupScrollAnimations() {
 function setupMobileMenu() {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navLinks = document.getElementById('nav-links');
+  const links = navLinks.querySelectorAll('a');
 
   if (!hamburgerBtn || !navLinks) return; 
+
+  const closeMenu = () => {
+    navLinks.classList.remove('is-active');
+    hamburgerBtn.classList.remove('is-active');
+  }
 
   hamburgerBtn.addEventListener('click', () => {
      navLinks.classList.toggle('is-active');
      hamburgerBtn.classList.toggle('is-active');
   }); 
+
+  links.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
 }
 
 // Funcionalidade do botao voltar para o topo 
@@ -122,5 +144,42 @@ function setupActiveSectionIndicator() {
 
   sections.forEach(section => {
     observer.observe(section);
+  });
+}
+
+function setupThemeToggler() {
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const body = document.body;
+
+  const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+  if (!themeToggleBtn || !icon) return;
+
+  const updateIcon = (theme) => {
+    if (theme === 'light') {
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  };
+
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  body.className = savedTheme === 'light' ? 'light-theme' : '';
+  updateIcon(savedTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    icon.classList.add('rotating');
+    body.classList.toggle('light-theme');
+
+    const newTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+
+    updateIcon(newTheme);
+
+    setTimeout(() => {
+      icon.classList.remove('rotating');
+    }, 500);
   });
 }

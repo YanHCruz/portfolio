@@ -58,8 +58,15 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-links {
@@ -579,7 +586,7 @@ body.light-theme header {
   .hamburger {
     display: block;
     position: fixed;
-    top: 1.5rem;
+    top: 0.2rem;
     right: 2rem;
   }
 

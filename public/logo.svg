@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Fundo com a cor var(background-secondary) -->
+  <rect width="100" height="100" rx="20" fill="#1E1E1E"/>
+  
+  <!-- Símbolo de Tag Esquerda (Cor: var(text-secondary)) -->
+  <path d="M 35 35 L 20 50 L 35 65" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Símbolo de Tag Direita (Cor: var(text-secondary)) -->
+  <path d="M 65 35 L 80 50 L 65 65" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Barra Central (Cor: var(accent-color) - Seu Roxo) -->
+  <path d="M 58 25 L 42 75" fill="none" stroke="#9A48D6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

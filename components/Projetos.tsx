@@ -5,30 +5,28 @@ const meusProjetos = [
   {
     id: 1,
     titulo: 'TechStore',
-    imagem: '/img/Print-techstore.jpg', // No Vite, a pasta public é acessada direto pela barra '/'
+    imagem: '/img/Print-techstore.jpg', 
     descricao: 'Projeto acadêmico de e-commerce criado durante a faculdade, com o foco em vendas de aparelhos Apple como iPhones, MacBooks, AirPods. Desenvolvido com apenas o Front-End, o projeto foi avaliado com nota máxima.',
     tecnologias: [
       { classe: 'fa-brands fa-html5', titulo: 'HTML5' },
       { classe: 'fa-brands fa-css3-alt', titulo: 'CSS3' },
       { classe: 'fa-brands fa-js', titulo: 'JavaScript' },
     ],
-    linkDeploy: 'https://techstoreofc.flashclean.com.br/#',
+    linkDeploy: 'https://techstore-steel.vercel.app',
     linkGithub: 'https://github.com/gustavoLim4/Tech-Store.git',
   },
   {
     id: 2,
-    titulo: 'Site em desenvolvimento',
-    imagem: '/img/pagina em desenvolvimento.png',
-    descricao: 'Projeto em desenvolvimento freelancer, voltado para um site para um studio da área da beleza, onde terá um foco para um e-commerce para vendas de e-books de aulas. Projeto sendo criado com Front-End, e será adicionado um Banco de dados, e um Back-End em python.',
+    titulo: 'LiBeauty',
+    imagem: '/img/li-beautyprint.png',
+    descricao: 'Projeto para um studio beauty, com criação de um agendamento de clientes interno, junto de um sistema admin para gerenciar ganhos, clientes e agendamentos.',
     tecnologias: [
-      { classe: 'fa-brands fa-html5', titulo: 'HTML5' },
-      { classe: 'fa-brands fa-css3-alt', titulo: 'CSS3' },
-      { classe: 'fa-brands fa-js', titulo: 'JavaScript' },
-      { classe: 'fa-brands fa-python', titulo: 'Python' },
+      { classe: 'fa-brands fa-react', titulo: 'React' },
+      { classe: 'fa-brands fa-php', titulo: 'PHP' },
+      { classe: 'fa-solid fa-database', titulo: 'MySQL' },
     ],
-    // Como este projeto não tem links ainda, deixamos vazio
-    linkDeploy: '',
-    linkGithub: '',
+    linkDeploy: 'https://li-beauty.vercel.app',
+    linkGithub: 'https://github.com/Tech-Store-UNI/Li-Beauty',
   },
 ];
 

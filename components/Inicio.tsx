@@ -18,7 +18,7 @@ const Inicio = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Desenvolvedor Front-End | Futuro Full Stack
+          Dev Front-End | Dev Back-End | Análise de Dados
         </motion.p>
 
         <motion.a 

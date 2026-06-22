@@ -40,7 +40,6 @@ const Habilidades = () => {
           whileInView="visivel"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Note que substituímos 'class' por 'className' e fechamos as tags <img> com '/>' */}
           <motion.div className="skill-card" variants={cardVariantes}>
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="Logo do HTML5" />
             <p>HTML5</p>
@@ -65,11 +64,35 @@ const Habilidades = () => {
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" />
             <p>Figma</p>
           </motion.div>
+
+          <motion.div className="skill-card" variants={cardVariantes}>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+            <p>Python</p>
+          </motion.div>
+
+          <motion.div className="skill-card" variants={cardVariantes}>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" />
+            <p>MySQL</p>
+          </motion.div>
+
+          <motion.div className="skill-card" variants={cardVariantes}> 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original-wordmark.svg" alt="SqlServer" />
+            <p>SQLServer</p>
+          </motion.div>
+
+           <motion.div className="skill-card" variants={cardVariantes}> 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" />
+            <p>PHP</p>
+          </motion.div>
+
+          <motion.div className="skill-card" variants={cardVariantes}> 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualbasic/visualbasic-original.svg" alt="VB" />
+            <p>Visual Basic</p>
+          </motion.div>
         </motion.div>
 
-        <h3 className="skills-subtitle">Aprendendo Atualmente</h3>
-        
-        {/* Container do 'Aprendendo Atualmente' */}
+        {/* <h3 className="skills-subtitle">Aprendendo Atualmente</h3>
+
         <motion.div 
           className="skills-grid"
           variants={containerVariantes}
@@ -85,7 +108,7 @@ const Habilidades = () => {
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" />
             <p>MySQL</p>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

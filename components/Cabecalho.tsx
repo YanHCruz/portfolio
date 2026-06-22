@@ -2,23 +2,24 @@ import { useState, useEffect } from 'react';
 
 const Cabecalho = () => {
   const [menuAberto, setMenuAberto] = useState(false);
-  // O seu CSS padrão é escuro, então o estado lightTheme começa como false
-  const [temaClaro, setTemaClaro] = useState(false); 
+  const [temaClaro, setTemaClaro] = useState(() => {
+    const temaSalvo = localStorage.getItem('tema-portfolio');
+    return temaSalvo === 'claro'; 
+  }); 
 
-  // Este Hook (useEffect) observa a variável 'temaClaro'. 
-  // Sempre que ela mudar, ele adiciona ou remove a classe no <body>
   useEffect(() => {
     if (temaClaro) {
       document.body.classList.add('light-theme');
+      localStorage.setItem('tema-portfolio', 'claro');
     } else {
       document.body.classList.remove('light-theme');
+      localStorage.setItem('tema-portfolio', 'escuro'); 
     }
   }, [temaClaro]);
 
+  // Funções de clique
   const alternarMenu = () => setMenuAberto(!menuAberto);
   const alternarTema = () => setTemaClaro(!temaClaro);
-
-  // Função para fechar o menu ao clicar num link (melhora a experiência no telemóvel)
   const fecharMenu = () => setMenuAberto(false);
 
   return (
@@ -33,11 +34,10 @@ const Cabecalho = () => {
               title="Alterar tema"
               onClick={alternarTema}
             >
-              {/* No React, não precisamos esconder ícones com CSS, nós simplesmente renderizamos o ícone certo! */}
+
               <i className={temaClaro ? "fas fa-moon" : "fas fa-sun"}></i>
             </button>
 
-            {/* Aqui usamos a sua classe 'is-active' dinâmica */}
             <button 
               className={`hamburger ${menuAberto ? 'is-active' : ''}`} 
               id="hamburger-btn" 
@@ -50,7 +50,6 @@ const Cabecalho = () => {
             </button>
           </div>
 
-          {/* Aqui também aplicamos a classe 'is-active' dinâmica */}
           <ul className={`nav-links ${menuAberto ? 'is-active' : ''}`} id="nav-links">
             <li><a href="#home" onClick={fecharMenu}>Home</a></li>
             <li><a href="#about" onClick={fecharMenu}>Sobre</a></li>

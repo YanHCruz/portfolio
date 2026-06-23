@@ -2,17 +2,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Contato = () => {
-  // Estado para controlar a visibilidade da mensagem de feedback
   const [copiado, setCopiado] = useState(false);
 
   const copiarEmail = () => {
-    // Copia o texto para a área de transferência do usuário
     navigator.clipboard.writeText('yhenrique041@gmail.com');
-    
-    // Mostra a mensagem de sucesso
     setCopiado(true);
 
-    // Esconde a mensagem automaticamente após 3 segundos
     setTimeout(() => {
       setCopiado(false);
     }, 3000);
@@ -51,6 +46,9 @@ const Contato = () => {
           </a>
           <a href="https://github.com/YanHCruz" target="_blank" rel="noreferrer">
             <i className="fa-brands fa-github" aria-label="GitHub" title="GitHub"></i>
+          </a>
+          <a href="https://wa.me/5511965637504?text=Ol%C3%A1%20Yan!%20Vi%20o%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20com%20voc%C3%AA." target="_blank" rel="noreferrer">
+            <i className="fa-brands fa-whatsapp" aria-label="WhatsApp" title="WhatsApp"></i>
           </a>
         </motion.div>
 

@@ -14,14 +14,12 @@ const Sobre = () => {
         >
           <h2>Sobre mim</h2>
           <p>
-            Sou um estudante de programação e desenvolvedor iniciante. Tenho
-            experiência com HTML, CSS, JavaScript e estou aprendendo Python para
-            elevar minhas habilidades. Busco sempre evoluir e criar projetos que
-            possam ajudar pessoas e empresas a crescerem no mundo digital.
+            Sou um desenvolvedor Full Stack focado em construir soluções eficientes de ponta a ponta. 
+            Minha atuação combina a criação de interfaces modernas e intuitivas com React, e o desenvolvimento de arquiteturas e regras de negócios robustas no Back-End utilizando PHP e SQL Server.
           </p>
           <p>
-            Estou aberto a oportunidades de estágio e projetos freelance. Vamos
-            trabalhar juntos para transformar suas ideias em realidade!
+            Gosto de resolver problemas reais, garantindo a qualidade do software desde a modelagem dos dados em produção até a experiência final do usuário. 
+            Atualmente, busco oportunidades para agregar valor tecnológico a novos projetos e continuar evoluindo profissionalmente.
           </p>
         </motion.div>
 
